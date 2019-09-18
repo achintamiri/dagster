@@ -1,0 +1,64 @@
+'''
+import julia
+julia.install()
+from julia import Base # install PyCall.jl etc.
+Base.sind(90)
+#from julia import Base
+j = julia.Julia()
+j.include("julia_sample.jl")
+'''
+'''
+import julia
+#julia.install()
+#from julia import Base
+#Base.sind(90)
+from dagster import execute_pipeline, pipeline, solid,as_dagster_type,lambda_solid
+import pandas as pd
+
+@solid
+def Input1(_) :
+    j = julia.Julia()
+    j.include("julia_sample.jl")
+    return j
+
+@pipeline
+def hello_world_pipeline():
+    Input1()
+'''
+import julia
+from dagster import execute_pipeline, pipeline, solid,as_dagster_type,lambda_solid
+import pandas as pd
+
+DataFrame = as_dagster_type(
+    pd.DataFrame,
+    name='PandasDataFrame',
+)
+@lambda_solid
+def Input1() -> DataFrame:
+    r = pd.read_csv('file1.csv')
+    return r
+
+@lambda_solid
+def Input2() -> DataFrame:
+    r2 = pd.read_csv('file2.csv')
+    return r2
+
+@lambda_solid
+def Merge(r:DataFrame,r2:DataFrame) -> DataFrame:
+    r3=pd.concat([r,r2], axis=1)
+    j = julia.Julia()
+    #r4 = j.include("julia_sample.jl")
+    r4 = j.include("test_systemA4-toolbox.jl")
+
+    return r3
+
+@lambda_solid
+def Result_output(y:DataFrame) -> DataFrame:
+    y3=y
+    y3.to_csv(r'y3.csv')
+    return y3
+
+@pipeline
+def actual_dag_pipeline() -> DataFrame:
+    y=Merge(Input1(),Input2())
+    Result_output(y)
