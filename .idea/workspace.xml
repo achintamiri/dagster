@@ -29,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Achin-spine/git-directory/energy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -192,7 +192,7 @@
       <workItem from="1568830312230" duration="6174000" />
       <workItem from="1568845379107" duration="423000" />
       <workItem from="1568845987696" duration="330000" />
-      <workItem from="1568846375872" duration="1404000" />
+      <workItem from="1568846375872" duration="1676000" />
     </task>
     <task id="LOCAL-00001" summary="dagster">
       <created>1568844422705</created>
