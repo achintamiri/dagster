@@ -48,8 +48,9 @@ There are currently 4 relevant files in the Dagster Repository which important f
 
 3.If it is successful you will see the below message:
 
-  `Loading repository...`
-  `Serving on http://127.0.0.1:3000` 
+     `Loading repository...`
+     
+     `Serving on http://127.0.0.1:3000` 
 
 4.click on http://127.0.0.1:3000 to see the workflow in Dagit.
 
