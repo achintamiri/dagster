@@ -46,7 +46,7 @@ There are currently 4 relevant files in the Dagster Repository which important f
     
     `dagit -f juliatest.py -n actual_dag_pipeline `( For Linux)
 
-3.If it is successful yo will see the below message:
+3.If it is successful you will see the below message:
 
   `Loading repository...`
   `Serving on http://127.0.0.1:3000` 
@@ -55,6 +55,6 @@ There are currently 4 relevant files in the Dagster Repository which important f
 
 5.Click on `select a Pipeline - > actual_dag_pipiline` . You should see a graph with 4 nodes.
 
-6. Click on Execute->Start Execution 
+6.Click on Execute->Start Execution 
 
 
