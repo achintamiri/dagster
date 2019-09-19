@@ -45,17 +45,16 @@ def Input2() -> DataFrame:
 
 @lambda_solid
 def Merge(r:DataFrame,r2:DataFrame) -> DataFrame:
-    r3=pd.concat([r,r2], axis=1)
     j = julia.Julia()
-    #r4 = j.include("julia_sample.jl")
-    r4 = j.include("test_systemA4-toolbox.jl")
-
+    j.include("julia_sample.jl")
+    r3 = j.filesmeth(r, r2)
+    #r4 = j.include("test_systemA4-toolbox.jl")
     return r3
 
 @lambda_solid
 def Result_output(y:DataFrame) -> DataFrame:
     y3=y
-    y3.to_csv(r'y3.csv')
+    y3.to_csv(r'merged_output.csv')
     return y3
 
 @pipeline
