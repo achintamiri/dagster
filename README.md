@@ -59,5 +59,3 @@ There are currently 4 relevant files in the Dagster Repository which important f
 6.Click on Execute->Start Execution 
 
 
-
- 
