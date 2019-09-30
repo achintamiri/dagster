@@ -61,3 +61,4 @@ def Result_output(y:DataFrame) -> DataFrame:
 def actual_dag_pipeline() -> DataFrame:
     y=Merge(Input1(),Input2())
     Result_output(y)
+#end
