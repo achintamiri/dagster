@@ -48,7 +48,7 @@ def Merge(r:DataFrame,r2:DataFrame) -> DataFrame:
     j = julia.Julia()
     j.include("julia_sample.jl")
     r3 = j.filesmeth(r, r2)
-    # r4 = j.include("test_systemA4-toolbox.jl")
+    r4 = j.include("test_systemA4-toolbox.jl")
     return r3
 
 @lambda_solid # Fourth node which contains the output merged file.
