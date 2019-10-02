@@ -1,4 +1,4 @@
-# Dagster workflow
+# Dagster Spine  workflow
 Workflow created is a functional  basic DAG workflow using Dagster Library to implement Data Pipeline using which consists of 4 nodes where 3 nodes are executed via python and 1 node via Julia script.
 
 ## Getting Started
@@ -21,7 +21,7 @@ There are currently 7 relevant files in the Dagster Repository which important f
 ## Installation Instructions
 1.Clone the master branch  onto your computer.
 
-2.Install Python (3.6->) and JuliaPy(In Julia REPL and Pycall. For more instructions Refer : 
+2.Install Python (3.6->) and JuliaPy(In Julia REPL and Pycall. For Julia installaition instructions Refer : 
 
 [JuliaPy](https://github.com/JuliaPy/pyjulia) 
 
