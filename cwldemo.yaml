@@ -1,0 +1,43 @@
+cwlVersion: v1.0
+class: Workflow
+inputs:
+  Input1:
+    type: File?
+    extract: string
+    format: csv
+    inputSource: file1.csv
+  Input2:
+    type: File?
+    extract: string
+    format: csv
+    inputSource: file2.csv
+
+outputs:
+  task3_output:
+    type: File
+    outputSource: task4/output
+steps:
+ task1:
+   in:
+     files:
+       source: Input1
+   out: [task1out]
+ task2:
+   in:
+     files:
+       source: Input2
+   out: [task2out]
+ task3:
+    in:
+      files:
+        source: [task1out, task2out]
+        script: julia
+        name: julia_sample.jl
+        name2: testA4.jl
+    out: [outfile]
+ task4:
+   in:
+     files:
+       source: outfile
+       format: csv
+   out: [output]
