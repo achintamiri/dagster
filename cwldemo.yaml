@@ -13,7 +13,7 @@ inputs:
     inputSource: file2.csv
 
 outputs:
-  task3_output:
+  task4_output:
     type: File
     outputSource: task4/output
 steps:

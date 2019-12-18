@@ -1,0 +1,42 @@
+cwlVersion: v1.0
+class: Workflow
+inputs:
+  Input1:
+    type: File?
+    extract: string
+    format: xlsx
+    inputSource: A4.xlsx
+outputs:
+  output_db:
+    type: File
+    outputSource: output_db/output
+steps:
+ xlsx_inputs:
+   in:
+     files:
+       source: Input1
+   out: [task1out]
+ coverter:
+   in:
+     files:
+       source: [task1out]
+   out: [sqlfile]
+ converted_inputs:
+    in:
+      files:
+        source: [sqlfile]
+        name: converted_inputs.sqlite
+    out: [covertedfile]
+ case_study_A4:
+    in:
+      files:
+        source: [covertedfile]
+        script: julia
+        name: testA4.jl
+    out: [outfile]
+ output_db:
+   in:
+     files:
+       source: outfile
+       format: csv
+   out: [output]
