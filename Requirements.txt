@@ -21,7 +21,7 @@ conan==1.18.2
 conda==4.7.12
 conda-package-handling==1.5.0
 contextlib2==0.5.5
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 dagit==0.5.7
 dagster==0.5.7
